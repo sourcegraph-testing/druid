@@ -238,7 +238,7 @@ public class ExpressionSelectorBenchmark
             ImmutableList.of(
                 new ExpressionVirtualColumn(
                     "v",
-                    "timestamp_format(__time, 'yyyy-MM-dd')",
+                    "timestamp_format(__time, 'YYYY-MM-dd')",
                     ValueType.STRING,
                     TestExprMacroTable.INSTANCE
                 )
@@ -282,7 +282,7 @@ public class ExpressionSelectorBenchmark
                   new ExtractionDimensionSpec(
                       ColumnHolder.TIME_COLUMN_NAME,
                       "v",
-                      new TimeFormatExtractionFn("yyyy-MM-dd", null, null, null, false)
+                      new TimeFormatExtractionFn("YYYY-MM-dd", null, null, null, false)
                   )
               );
           consumeDimension(cursor, selector, blackhole);
